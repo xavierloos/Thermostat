@@ -3,8 +3,11 @@ describe("Thermostat", () => {
     beforeEach(() =>{
         therm = new Thermostat()
     })
-    it("starts at 20 degreed", () => {
+    it("starts at 20 degrees", () => {
         expect(therm.getCurrentTemperature()).toEqual(20)
+    })
+    it("has a min temp of 10 degrees", () => {
+        expect(therm.getMinTemperature()).toEqual(10)
     })
     describe("increase", () => {
         it("is been defined", () => {
