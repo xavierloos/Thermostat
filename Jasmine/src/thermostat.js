@@ -1,12 +1,15 @@
 class Thermostat {
     constructor() {
-        this.temp = this.getCurrentTemperature
-    }
-    increase() {
-        return 20;
+        this.temp = 20
     }
     getCurrentTemperature() {
-        return 20
+        return this.temp
+    }
+    increase() {
+        this.temp+=1
+    }
+    decrease() {
+        this.temp-=1
     }
 
 }
