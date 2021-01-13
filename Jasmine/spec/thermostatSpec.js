@@ -4,10 +4,16 @@ describe("Thermostat", () => {
         therm = new Thermostat()
     })
     it("starts at 20 degrees", () => {
-        expect(therm.getCurrentTemperature()).toEqual(20)
+        expect(therm.getCurrentTemp()).toEqual(20)
     })
     it("has a min temp of 10 degrees", () => {
-        expect(therm.getMinTemperature()).toEqual(10)
+        expect(therm.getMinTemp()).toEqual(10)
+    })
+    it("stops at min degrees", () => {
+        for (var i = 0; i < 11; i++) {
+            therm.decrease();
+        }
+        expect(therm.getMinTemp()).toEqual(10)
     })
     describe("increase", () => {
         it("is been defined", () => {
@@ -15,7 +21,7 @@ describe("Thermostat", () => {
         })
         it("should change up the temp", () => {
             therm.increase()
-            expect(therm.getCurrentTemperature()).toEqual(21)
+            expect(therm.getCurrentTemp()).toEqual(21)
         })
     })
     describe("decrease", () => {
@@ -24,7 +30,7 @@ describe("Thermostat", () => {
         })
         it("should change up the temp", () => {
             therm.decrease()
-            expect(therm.getCurrentTemperature()).toEqual(19)
+            expect(therm.getCurrentTemp()).toEqual(19)
         })
     })
 })

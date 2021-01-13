@@ -1,19 +1,26 @@
 class Thermostat {
     constructor() {
         this.temp = 20
-        this.min_temp = 10
+        this.minTemp = 10
+        this.maxTemp = 32
+        this.maxPowerSaving = 25
     }
-    getCurrentTemperature() {
-        return this.temp
+    getCurrentTemp() {
+           return this.temp
     }
-    getMinTemperature() {
-        return this.min_temp
+    getMinTemp() {
+        return this.minTemp
     }
     increase() {
         this.temp+=1
     }
     decrease() {
+        if (this.isMinTemp()) {
+            return;
+        }
         this.temp-=1
     }
-
+    isMinTemp() {
+        return this.temp === this.minTemp;
+    }
 }
