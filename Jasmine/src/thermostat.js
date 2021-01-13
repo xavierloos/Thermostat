@@ -23,6 +23,7 @@ class Thermostat {
         return this.temp === this.minTemp;
     }
     powerSavingOn() {
-        this.temp+=5
+        this.maxTemp-=7
     }
+   
 }
