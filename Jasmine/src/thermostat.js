@@ -28,4 +28,8 @@ class Thermostat {
     powerSavingOff() {
         this.maxTemp+=7
     }
+    resetTemp() {
+        this.temp = 20
+    }
+
 }
