@@ -3,7 +3,6 @@ class Thermostat {
         this.temp = 20
         this.minTemp = 10
         this.maxTemp = 32
-        this.maxPowerSaving = 25
     }
     getCurrentTemp() {
            return this.temp
@@ -22,5 +21,8 @@ class Thermostat {
     }
     isMinTemp() {
         return this.temp === this.minTemp;
+    }
+    powerSavingOn() {
+        this.temp+=5
     }
 }
