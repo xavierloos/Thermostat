@@ -43,5 +43,15 @@ describe("Thermostat", () => {
             expect(therm.maxTemp).toEqual(25)
         })
     })
-   
+   describe("powerSavingOff", () => {
+        it("is been defined", () => {
+            expect(therm.powerSavingOff).toBeDefined()
+        })
+       it("sets the max temp to 25 degrees", () => {
+            therm.powerSavingOn()
+            expect(therm.maxTemp).toEqual(25)
+            therm.powerSavingOff()
+            expect(therm.maxTemp).toEqual(32)
+        })
+    })
 })

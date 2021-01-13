@@ -25,5 +25,7 @@ class Thermostat {
     powerSavingOn() {
         this.maxTemp-=7
     }
-   
+    powerSavingOff() {
+        this.maxTemp+=7
+    }
 }
