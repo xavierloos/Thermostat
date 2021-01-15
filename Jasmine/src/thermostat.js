@@ -1,35 +1,47 @@
 class Thermostat {
     constructor() {
-        this.temp = 20
-        this.minTemp = 10
-        this.maxTemp = this.powerSavingOn()
+        this.temp = this.getCurrentTemp()
+        this.minTemp = this.getMinTemp()
+        this.savingMode = true
+        this.maxTemp = this.getMaxTemp()
     }
     getCurrentTemp() {
-           return this.temp
+        return 20
     }
     getMinTemp() {
-        return this.minTemp
+        return 10
+    }
+    getMaxTemp() {
+        if (this.savingMode === true) {
+            return 25
+        } 
+            return 32
     }
     increase() {
-        this.temp+=1
+        if (this.temp <= this.getMaxTemp()) {
+            return this.temp += 1
+        }
     }
     decrease() {
-        if (this.isMinTemp()) {
-            return;
+        if (this.temp >= this.minTemp) {
+            return this.temp -= 1
         }
-        this.temp-=1
     }
-    isMinTemp() {
-        return this.temp === this.minTemp;
+    switchOn() {
+        return this.savingMode = true
     }
-    powerSavingOn() {
-        return this.maxTemp = 25
+    switchOff() {
+        return this.savingMode = false
     }
-    powerSavingOff() {
-        this.maxTemp+=7
+    reset() {
+        return this.temp = 20
     }
-    resetTemp() {
-        this.temp = 20
+    currentUsage() {
+        if (this.temp < 18) {
+            return "Low-Usage"
+        }else if (this.temp < 26) {
+            return "Medium-Usage"
+        }
+        return "High-Usage"
     }
-
 }

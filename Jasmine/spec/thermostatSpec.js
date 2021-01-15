@@ -10,10 +10,10 @@ describe("Thermostat", () => {
         expect(therm.getMinTemp()).toEqual(10)
     })
     it("stops at min degrees", () => {
-        for (var i = 0; i < 11; i++) {
-            therm.decrease();
+        for (var i = 0; i < 10; i++) {
+            therm.decrease()
         }
-        expect(therm.getMinTemp()).toEqual(10)
+        expect(therm.temp).toEqual(10)
     })
     describe("increase", () => {
         it("is been defined", () => {
@@ -21,52 +21,73 @@ describe("Thermostat", () => {
         })
         it("should change up the temp", () => {
             therm.increase()
-            expect(therm.getCurrentTemp()).toEqual(21)
+            expect(therm.temp).toEqual(21)
         })
     })
     describe("decrease", () => {
         it("is been defined", () => {
             expect(therm.decrease).toBeDefined()
         })
-        it("should change up the temp", () => {
+        it("should change down the temp", () => {
             therm.decrease()
-            expect(therm.getCurrentTemp()).toEqual(19)
+            expect(therm.temp).toEqual(19)
         })
     })
-    describe("powerSavingOn", () => {
+    describe("switchOn", () => {
         it("is been defined", () => {
-            expect(therm.powerSavingOn).toBeDefined()
+            expect(therm.switchOn).toBeDefined()
         })
-        it("is by default", () => {
+        it("is on by default", () => {
+            expect(therm.switchOn()).toBe(true)
             expect(therm.maxTemp).toEqual(25)
         })
         it("sets the max temp to 25 degrees", () => {
-            therm.powerSavingOff()
-            expect(therm.maxTemp).toEqual(32)
-            therm.powerSavingOn()
-            expect(therm.maxTemp).toEqual(25)
+            therm.switchOff()
+            expect(therm.getMaxTemp()).toEqual(32)
+            therm.switchOn()
+            expect(therm.getMaxTemp()).toEqual(25)
         })
     })
-   describe("powerSavingOff", () => {
-        it("is been defined", () => {
-            expect(therm.powerSavingOff).toBeDefined()
+   describe("switchOff", () => {
+       it("is been defined", () => {
+            expect(therm.switchOff).toBeDefined()
         })
-       it("sets the max temp to 25 degrees", () => {
-            therm.powerSavingOn()
-            expect(therm.maxTemp).toEqual(25)
-            therm.powerSavingOff()
-            expect(therm.maxTemp).toEqual(32)
+       it("sets the max temp to 32 degrees", () => {
+            therm.switchOff()
+            expect(therm.getMaxTemp()).toEqual(32)
         })
    })
-    describe("resetTemp", () => {
+    describe("reset", () => {
         it("is been defined", () => {
-            expect(therm.resetTemp).toBeDefined()
+            expect(therm.reset()).toBeDefined()
         })
         it("resets the temp to 20", () => {
             therm.increase()
             expect(therm.temp).toEqual(21)
-            therm.resetTemp()
+            therm.reset()
             expect(therm.temp).toEqual(20)
+        })
+    })
+    describe("currentUsage", () => {
+        it("is been defined", () => {
+            expect(therm.currentUsage()).toBeDefined()
+        })
+        it("is low-usage", () => {
+            for (var i = 0; i < 10; i++) {
+                therm.decrease();
+            }
+            expect(therm.currentUsage()).toEqual("Low-Usage")
+        })
+        it("is medium-usage", () => {
+            therm.reset()
+            expect(therm.currentUsage()).toEqual("Medium-Usage") 
+        })
+        it("is high-usage", () => {
+            therm.switchOff()
+            for (var i = 0; i < 6; i++) {
+                therm.increase();
+            }
+            expect(therm.currentUsage()).toEqual("High-Usage")
         })
     })
 })
