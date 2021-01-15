@@ -12,20 +12,17 @@ class Thermostat {
         return 10
     }
     getMaxTemp() {
-        if (this.savingMode === true) {
+        if (this.savingMode === true)
             return 25
-        } 
-            return 32
+        return 32
     }
     increase() {
-        if (this.temp <= this.getMaxTemp()) {
+        if (this.temp <= this.getMaxTemp()) 
             return this.temp += 1
-        }
     }
     decrease() {
-        if (this.temp >= this.minTemp) {
+        if (this.temp >= this.minTemp) 
             return this.temp -= 1
-        }
     }
     switchOn() {
         return this.savingMode = true
@@ -37,11 +34,10 @@ class Thermostat {
         return this.temp = 20
     }
     currentUsage() {
-        if (this.temp < 18) {
+        if (this.temp <= 18)
             return "Low-Usage"
-        }else if (this.temp < 26) {
+        else if (this.temp <= 25) 
             return "Medium-Usage"
-        }
         return "High-Usage"
     }
 }

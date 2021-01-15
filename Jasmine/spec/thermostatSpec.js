@@ -10,9 +10,8 @@ describe("Thermostat", () => {
         expect(therm.getMinTemp()).toEqual(10)
     })
     it("stops at min degrees", () => {
-        for (var i = 0; i < 10; i++) {
+        for (var i = 0; i < 10; i++)
             therm.decrease()
-        }
         expect(therm.temp).toEqual(10)
     })
     describe("increase", () => {
@@ -73,9 +72,8 @@ describe("Thermostat", () => {
             expect(therm.currentUsage()).toBeDefined()
         })
         it("is low-usage", () => {
-            for (var i = 0; i < 10; i++) {
+            for (var i = 0; i < 10; i++)
                 therm.decrease();
-            }
             expect(therm.currentUsage()).toEqual("Low-Usage")
         })
         it("is medium-usage", () => {
@@ -84,9 +82,8 @@ describe("Thermostat", () => {
         })
         it("is high-usage", () => {
             therm.switchOff()
-            for (var i = 0; i < 6; i++) {
+            for (var i = 0; i < 6; i++) 
                 therm.increase();
-            }
             expect(therm.currentUsage()).toEqual("High-Usage")
         })
     })
