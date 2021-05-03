@@ -4,3 +4,6 @@
 .medium-usage {
   color: orange;
 }
+.high-usage {
+  color: red;
+}
