@@ -6,8 +6,8 @@ $(document).ready(function () {
 
   $('#temperature-up').on('click', function () {
     thermostat.increase();
-    console.log(thermostat.increase())
     updateTemperature();
+    console.log(thermostat.increase())
   });
 
   $('#temperature-down').on('click', function () {
