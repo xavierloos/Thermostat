@@ -35,9 +35,9 @@ class Thermostat {
     }
     currentUsage() {
         if (this.temp <= 18)
-            return "Low-Usage"
+            return "low-usage"
         else if (this.temp <= 25) 
-            return "Medium-Usage"
-        return "High-Usage"
+            return "medium-usage"
+        return "high-usage"
     }
 }
