@@ -22,7 +22,7 @@ $(document).ready(function () {
   });
 
   $('#power-saving-on').on('click', function () {
-    thermostat.switchPowerSavingModeOn();
+    thermostat.switchOn();
     $('#power-saving-status').text('on');
     updateTemperature();
   });
