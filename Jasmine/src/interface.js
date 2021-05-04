@@ -8,4 +8,9 @@ $(document).ready(function () {
     thermostat.up();
     updateTemperature();
   });
- })
+  
+  function updateTemperature() {
+    $('#temperature').text(thermostat.getCurrentTemperature());
+    $('#temperature').attr('class', thermostat.energyUsage());
+  }
+})
