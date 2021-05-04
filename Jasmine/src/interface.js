@@ -16,8 +16,14 @@ $(document).ready(function () {
     console.log(thermostat.increase())
   });
 
-  $('#temperature-reset').on('click', function() {
+  $('#temperature-reset').on('click', function () {
     thermostat.reset();
+    updateTemperature();
+  });
+
+  $('#power-saving-on').on('click', function () {
+    thermostat.switchPowerSavingModeOn();
+    $('#power-saving-status').text('on');
     updateTemperature();
   });
 
