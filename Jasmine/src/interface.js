@@ -5,12 +5,13 @@ $(document).ready(function () {
   updateTemperature();
 
   $('#temperature-up').on('click', function() {
-    thermostat.up();
+    thermostat.increase();
+    console.log(thermostat.increase())
     updateTemperature();
   });
   
   function updateTemperature() {
-    $('#temperature').text(thermostat.getCurrentTemperature());
-    $('#temperature').attr('class', thermostat.energyUsage());
+    $('#temperature').text(thermostat.getCurrentTemp());
+    $('#temperature').attr('class', thermostat.currentUsage());
   }
 })
