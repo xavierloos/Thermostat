@@ -1,12 +1,13 @@
 class Thermostat {
     constructor() {
-        this.temp = this.getCurrentTemp()
+        this._DEFAULT_TEMPERATURE = 20;
+        this.temp = this._DEFAULT_TEMPERATURE
         this.minTemp = this.getMinTemp()
         this.savingMode = true
         this.maxTemp = this.getMaxTemp()
     }
     getCurrentTemp() {
-        return 20
+        return this.temp
     }
     getMinTemp() {
         return 10
