@@ -17,6 +17,7 @@ body{
   text-align: center;
 }
 button{
+  width: 50%;
   position: relative;
   padding: 32px;
   font-family: Roboto, sans-serif;
