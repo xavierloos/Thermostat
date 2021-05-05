@@ -13,3 +13,20 @@ body{
   background: -moz-linear-gradient(bottom, #9130E0, #91A483);
   background: linear-gradient(to top, #9130E0, #91A483);
 }
+button{
+  position: relative;
+  padding: 32px;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
+  color: white;
+  background: #275efe;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  overflow: hidden;
+  cursor: pointer;
+  filter: drop-shadow(0 2px 8px gray);
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
