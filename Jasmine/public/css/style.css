@@ -7,3 +7,39 @@
 .high-usage {
   color: red;
 }
+body{
+  background: #9130E0;
+  background: -webkit-linear-gradient(bottom, #9130E0, #91A483);
+  background: -moz-linear-gradient(bottom, #9130E0, #91A483);
+  background: linear-gradient(to top, #9130E0, #91A483);
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+button{
+  width: 50%;
+  position: relative;
+  padding: 32px;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
+  color: white;
+  background: #275efe;
+  border: 2px solid #275efe;
+  outline: none;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+button:hover{
+  background: white;
+  color: #275efe;
+  border: 2px solid #275efe;
+}
+header{
+  padding: 2rem;
+  text-align: center;
+  background: white;
+  font-size: 30px;
+}
