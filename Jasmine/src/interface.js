@@ -9,7 +9,6 @@ $(document).ready(() => {
     updateTemperature();
     console.log(thermostat.increase())
   });
-
   $('#temperature-down').on('click', () => {
     thermostat.decrease();
     updateTemperature();
