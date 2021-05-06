@@ -1,5 +1,4 @@
 'use strict';
-
 $(document).ready(() => {
   var thermostat = new Thermostat();
   updateTemperature();
