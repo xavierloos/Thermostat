@@ -32,7 +32,6 @@ $(document).ready(() => {
     $('#power-saving-status').text('off');
     updateTemperature();
   })
-
   function updateTemperature() {
     $('#temperature').text(thermostat.getCurrentTemp());
     $('#temperature').attr('class', thermostat.currentUsage());
