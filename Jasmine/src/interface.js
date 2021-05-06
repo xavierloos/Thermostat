@@ -15,7 +15,6 @@ $(document).ready(() => {
     updateTemperature();
     console.log(thermostat.decrease())
   });
-
   $('#temperature-reset').on('click', () => {
     thermostat.reset();
     updateTemperature();
