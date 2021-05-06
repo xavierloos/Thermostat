@@ -3,7 +3,6 @@
 $(document).ready(() => {
   var thermostat = new Thermostat();
   updateTemperature();
-
   $('#temperature-up').on('click', () => {
     thermostat.increase();
     updateTemperature();
