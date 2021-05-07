@@ -50,3 +50,10 @@ section{
   height: 100%;
   width: 100%;
 }
+
+#temperature{
+  width: 50%;
+  height: 100%;
+  vertical-align: middle;
+  font-size: 200px;
+}
