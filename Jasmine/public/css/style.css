@@ -8,10 +8,6 @@
   color: red;
 }
 body{
-  background: #9130E0;
-  background: -webkit-linear-gradient(bottom, #9130E0, #91A483);
-  background: -moz-linear-gradient(bottom, #9130E0, #91A483);
-  background: linear-gradient(to top, #9130E0, #91A483);
   padding: 0;
   margin: 0;
   text-align: center;
