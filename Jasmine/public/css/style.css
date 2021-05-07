@@ -67,3 +67,7 @@ section{
 .plus-minus{
   display: flex;
 }
+.plus-minus>button{
+  width: 50%;
+  height: 100px;
+}
