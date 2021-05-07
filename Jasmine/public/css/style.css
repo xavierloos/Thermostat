@@ -58,3 +58,12 @@ section{
   font-size: 200px;
   transition: all .4s cubic-bezier(.175, .885, 0, 1);
 }
+.options{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.plus-minus{
+  display: flex;
+}
