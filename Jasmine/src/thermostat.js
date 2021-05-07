@@ -18,8 +18,12 @@ class Thermostat {
         return 32
     }
     increase() {
-        if (this.temp <= this.getMaxTemp())
+        if (this.temp <= this.getMaxTemp()) {
             return this.temp += 1
+        } else {
+            return alert("You have reached the maximun temperature")
+        }
+
     }
     decrease() {
         if (this.temp >= this.minTemp) {
