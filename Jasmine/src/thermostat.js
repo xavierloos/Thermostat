@@ -18,12 +18,16 @@ class Thermostat {
         return 32
     }
     increase() {
-        if (this.temp <= this.getMaxTemp()) 
+        if (this.temp <= this.getMaxTemp())
             return this.temp += 1
     }
     decrease() {
-        if (this.temp >= this.minTemp) 
+        if (this.temp >= this.minTemp) {
             return this.temp -= 1
+        } else {
+            alert("You have reached the minimum temperature")
+        }
+
     }
     switchOn() {
         return this.savingMode = true
@@ -37,7 +41,7 @@ class Thermostat {
     currentUsage() {
         if (this.temp <= 18)
             return "low-usage"
-        else if (this.temp <= 25) 
+        else if (this.temp <= 25)
             return "medium-usage"
         return "high-usage"
     }
