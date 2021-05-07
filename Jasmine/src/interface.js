@@ -5,12 +5,10 @@ $(document).ready(() => {
   $('#temperature-up').on('click', () => {
     thermostat.increase();
     updateTemperature();
-    console.log(thermostat.increase())
   });
   $('#temperature-down').on('click', () => {
     thermostat.decrease();
     updateTemperature();
-    console.log(thermostat.decrease())
   });
   $('#temperature-reset').on('click', () => {
     thermostat.reset();
@@ -18,16 +16,20 @@ $(document).ready(() => {
   });
   $('#power-saving-on').on('click', () => {
     thermostat.switchOn();
-    $('#power-saving-status').text('on');
+    $('#power-saving-status').text('ON');
     updateTemperature();
   });
   $('#power-saving-off').on('click', () => {
     thermostat.switchOff();
-    $('#power-saving-status').text('off');
+    $('#power-saving-status').text('OFF');
     updateTemperature();
   })
   function updateTemperature() {
     $('#temperature').text(thermostat.getCurrentTemp());
     $('#temperature').attr('class', thermostat.currentUsage());
+    $("#status-bar").attr({ "value": thermostat.getCurrentTemp() });
+    $("#status-bar").attr({ "min": thermostat.getMinTemp() });
+    $("#status-bar").attr({ "max": thermostat.getMaxTemp() });
+
   }
 })
