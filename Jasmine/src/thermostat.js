@@ -26,7 +26,7 @@ class Thermostat {
 
     }
     decrease() {
-        if (this.temp >= this.minTemp) {
+        if (this.temp > this.minTemp) {
             return this.temp -= 1
         } else {
             alert("You have reached the minimum temperature")
