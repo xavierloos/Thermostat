@@ -78,3 +78,7 @@ section{
 #temperature-reset{
   width: 100%;
 }
+.power-options{
+  display: flex;
+  flex-direction: column;
+}
