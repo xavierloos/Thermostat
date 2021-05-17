@@ -123,6 +123,7 @@ progress[value]::-webkit-progress-value {
     background-size: 35px 20px, 100% 100%, 100% 100%;
 }
 .button-name{
-    font-size: 0.3em;
-    font-weight: lighter;
+  font-size: 0.2em;
+  font-weight: lighter;
+  color: gray;
 }
